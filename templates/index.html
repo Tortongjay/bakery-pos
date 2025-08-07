@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ขายของเบเกอรี่</title>
+</head>
+<body>
+    <h1>ระบบขายเบเกอรี่</h1>
+    <form method="POST">
+        <label>สินค้า:</label><br>
+        <input type="text" name="item" required><br><br>
+
+        <label>จำนวน:</label><br>
+        <input type="number" name="quantity" required><br><br>
+
+        <label>ราคาต่อชิ้น:</label><br>
+        <input type="number" name="price" step="0.01" required><br><br>
+
+        <input type="submit" value="บันทึกการขาย">
+    </form>
+</body>
+</html>

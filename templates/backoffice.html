@@ -1,0 +1,13 @@
+{% extends "_base.html" %}
+{% block title %}หลังบ้าน{% endblock %}
+{% block content %}
+<h1 class="text-xl font-semibold mb-4">หลังบ้าน</h1>
+<div class="grid md:grid-cols-3 gap-4">
+  <div class="p-4 bg-white border rounded-xl shadow-sm">
+    <div class="text-sm text-slate-500">ยอดขายวันนี้</div>
+    <div class="text-2xl font-bold mt-1">฿{{ '%.2f'|format(total_today) }}</div>
+  </div>
+  <div class="p-4 bg-white border rounded-xl shadow-sm">รายงานอื่น ๆ (ต่อยอดทีหลัง)</div>
+  <div class="p-4 bg-white border rounded-xl shadow-sm">ปุ่มลัดไปหน้า รายงาน / สต็อก</div>
+</div>
+{% endblock %}

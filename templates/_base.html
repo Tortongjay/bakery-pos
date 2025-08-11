@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{% block title %}Bakery POS{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <nav class="bg-white border-b sticky top-0 z-10">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex gap-3 items-center">
+      <div class="font-bold">🥐 Bakery POS</div>
+      <a href="{{ url_for('pos') }}" class="hover:underline">หน้าขาย</a>
+      <a href="{{ url_for('products_page') }}" class="hover:underline">สินค้า</a>
+      <a href="{{ url_for('backoffice') }}" class="hover:underline">หลังบ้าน</a>
+    </div>
+  </nav>
+  <main class="max-w-6xl mx-auto p-4">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="mb-4">
+          {% for m in messages %}
+          <div class="p-3 bg-emerald-50 border border-emerald-200 rounded">{{ m }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
